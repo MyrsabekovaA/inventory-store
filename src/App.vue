@@ -1,30 +1,47 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import GhostElement from "./components/GhostElement.vue";
+import Inventory from './components/Inventory.vue'
+import { useTheme } from './store/useTheme';
+import './style/main.scss';
+
+const { toggleTheme } = useTheme();
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="app"  @toggle-theme="toggleTheme">
+    <div class="layout">
+      <div class="sidebar">
+        <GhostElement/>
+      </div>
+      <div class="main-content">
+        <Inventory/>
+      </div>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.layout {
+  display: flex;
+
+  .sidebar {
+    width: 236px;
+    margin-right: 20px;
+  }
+
+  .main-content {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
 }
 </style>

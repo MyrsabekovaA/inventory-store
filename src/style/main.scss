@@ -1,0 +1,61 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --element-bg-color: #f1eeee;
+  --element-border-color: #c7c4c4;
+}
+
+.dark-theme {
+  --bg-color: #1d1d1d;
+  --text-color: #ffffff;
+  --element-bg-color: #262626;
+  --element-border-color: #4D4D4D;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.ghost-element,
+.inventory-wrapper,
+.main-content .inventory-slot{
+  background-color: var(--element-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--element-border-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.inventory-wrapper,
+.inventory-slot,
+.inventory-item,
+.sidebar,
+.input-scroll input,
+.input-scroll textarea,
+.bottom,
+button {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.inventory-item{
+  color: var(--text-color);
+}
+
+.quantity, .sidebar{
+  border-left: 1px solid var(--element-border-color);
+}
+
+.divider, .input-scroll input,
+.input-scroll textarea, .bottom input{
+  border: 1px solid var(--element-border-color);
+  color: var(--text-color);
+}
+
+.sidebar{
+  background-color: var(--element-bg-color);
+}
+
+.bottom{
+  border-top: 1px solid var(--element-border-color);
+  background-color: var(--element-bg-color);
+}
