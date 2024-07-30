@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import GhostElement from "./components/GhostElement.vue";
 import Inventory from './components/Inventory.vue'
+import SmallGhost from "./components/SmallGhost.vue";
 import { useTheme } from './store/useTheme';
 import './style/main.scss';
 
@@ -17,6 +18,7 @@ const { toggleTheme } = useTheme();
         <Inventory/>
       </div>
     </div>
+    <SmallGhost/>
   </div>
 </template>
 
